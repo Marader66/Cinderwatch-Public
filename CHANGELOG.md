@@ -23,8 +23,8 @@ The 2.x line is feature-complete. This is the first public ship.
 
 **Watch Points — the signature mechanic**
 - Stand ≥ 4 tiles from any ally at turn start → +1 Watch Point. Persistent across battles.
-- Tier I (10): Watcher's Eye (+3 MD, +3 RD).
-- Tier II (30): Lantern Strike active (40-65 fire damage, range 1-5, ignores armor, reveals hidden enemies).
+- Tier I (10): Watcher's Eye — always-on +10% HP, +5 MD, +5 RD, +5 Initiative, +1 Vision.
+- Tier II (30): Lantern Strike active (40-65 fire damage, range 1-5, ignores armor, reveals hidden enemies) **plus on-watch synergy** — while ≥ 4 tiles from any ally, gain an additional +7 MD, +7 RD, +5 Initiative, and bleed immunity.
 - Tier III (75): Aura radius +1 + Night Watch (every brother treats night as day while warden alive).
 - Tier IV (150): Undying Vigil — Inheritor of Flame promotion on warden death.
 
@@ -62,7 +62,7 @@ The 2.x line is feature-complete. This is the first public ship.
 - Modern Hooks ≥ 0.4.0
 - MSU ≥ 1.2.7
 - Legends ≥ 19.3.17
-- ROTU Core Inn ≥ 2.1.2
+- ROTU Core ≥ 2.1.2
 
 ### Optional mods (graceful integrations)
 

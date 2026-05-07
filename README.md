@@ -48,8 +48,8 @@ These are all soft-detected. Cinderwatch runs without them; if any are present, 
 The Cinderwarden earns power by *staying at the formation's edge*. At the start of each of their turns, if the nearest allied actor is ≥ 4 tiles away (or no ally is on the field at all), they gain +1 Watch Point. Persistent across battles.
 
 Tier unlocks:
-- **Tier I (10 pts)** — Watcher's Eye: +3 Melee Defense, +3 Ranged Defense
-- **Tier II (30 pts)** — Lantern Strike: 40-65 fire damage active at 1-5 range, reveals hidden enemies, ignores armor, 2-turn cooldown
+- **Tier I (10 pts)** — Watcher's Eye: always-on **+10% HP, +5 MD, +5 RD, +5 Initiative, +1 Vision**.
+- **Tier II (30 pts)** — Lantern Strike active (40-65 fire damage at range 1-5, reveals hidden enemies, ignores armor, 2-turn CD) **plus an on-watch synergy bonus**: while standing ≥ 4 tiles from any ally, gain an additional **+7 MD, +7 RD, +5 Initiative, and bleed immunity**.
 - **Tier III (75 pts)** — Ember Expanded: aura radius +1; Night Watch (every brother in the company treats night as day while the Cinderwarden is alive)
 - **Tier IV (150 pts)** — Undying Vigil: on the Cinderwarden's death, the title and traits pass to their nearest sworn ally. The campaign continues. The watch holds.
 
