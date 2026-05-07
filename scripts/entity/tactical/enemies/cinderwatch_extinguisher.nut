@@ -169,8 +169,8 @@ this.cinderwatch_extinguisher <- this.inherit("scripts/entity/tactical/player", 
 		} catch (e) {
 			// Fallback if miasma_flail class isn't accessible for any
 			// reason — use a vanilla three-headed flail so the boss still
-			// has a weapon. User's running FoTN per the stack CLAUDE.md
-			// so this fallback should never trip.
+			// has a weapon. FoTN is a recommended dep, so this fallback
+			// should never trip in our usual stack.
 			try {
 				items.equip(::new("scripts/items/weapons/three_headed_flail"));
 			} catch (e2) {}

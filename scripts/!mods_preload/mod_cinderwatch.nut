@@ -12,9 +12,45 @@
 
 ::Cinderwatch <- {
 	ID      = "mod_cinderwatch",
-	Version = "2.6.1",
+	Version = "2.6.2",
 	Name    = "The Cinderwatch"
 };
+
+// ── Embedded StackLib ─────────────────────────────────────────────────
+// Stack Skills library lives inside this mod so end-users don't have to
+// install a second zip. Guarded — if any earlier-loaded sibling mod
+// (Golden Throne, future scenarios) already defined ::StackLib, we skip
+// and reuse theirs. First mod to load wins; subsequent loads no-op.
+// Helper files at scripts/lib/stack_skills/ are content-identical across
+// mods so zip-merge collisions are safe.
+//
+// NOTE: this block must stay BELOW the ::Cinderwatch slot above — our
+// build script's Version-string regex grabs the FIRST `Version = "..."`
+// it sees in the preload, and we want it to land on Cinderwatch's
+// version, not the embedded lib's.
+if (!("StackLib" in ::getroottable())) {
+	::StackLib <- {
+		ID      = "mod_lib_stack_skills",
+		Version = "0.1.2",
+		Name    = "Stack Skills Library",
+		Kind = {
+			Combat     = 0,
+			Persistent = 1
+		},
+		Defs = {},
+		CombatStore = {}
+	};
+	::StackLib.Hooks <- ::Hooks.register(
+		::StackLib.ID,
+		::StackLib.Version,
+		::StackLib.Name
+	);
+	::StackLib.Hooks.queue(">mod_msu", function () {
+		::include("scripts/lib/stack_skills/stack_lib");
+		::include("scripts/lib/stack_skills/combat_hooks");
+		::logInfo("[" + ::StackLib.ID + " v" + ::StackLib.Version + "] loaded (embedded).");
+	});
+}
 
 // v2.0.12 — Cinderwatch story arc can fire inside Golden Throne as well,
 // when a brother with cinderwarden_background is in the company. The

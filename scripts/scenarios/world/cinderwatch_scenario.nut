@@ -373,8 +373,7 @@ this.cinderwatch_scenario <- this.inherit("scripts/scenarios/world/tainted_world
 		// Day-70 messenger); Approach requires `CinderwatchWesternRumorHeard`;
 		// Reckoning requires `CinderwatchApproachComplete`. Dim Ember and
 		// Dark Grows are window-gated between beats with narrative
-		// prerequisites. See CLAUDE.md "Western Tower questline" section
-		// for the full trigger matrix.
+		// prerequisites.
 		this.World.Events.addSpecialEvent("event.cinderwatch_western_rumor");
 		this.World.Events.addSpecialEvent("event.cinderwatch_dim_ember");
 		this.World.Events.addSpecialEvent("event.cinderwatch_approach");

@@ -9,6 +9,30 @@ Newest first.
 
 ---
 
+## 2.6.2 — 2026-05-07
+
+**Patch — silences the "Stack Skills lib not loaded" log warning.** Save-compatible with v2.6.x.
+
+The Cinderwarden's Watch Points persistent counter was registered through a shared library called `mod_lib_stack_skills` (`::StackLib`) that was never publicly shipped. Every public Cinderwatch user has been logging on every campaign start:
+
+```
+[Cinderwatch] Stack Skills lib not loaded — Watch Points falling back to legacy state
+```
+
+The legacy fallback path still worked (Watch Points lived in `::World.Flags` directly, with the `cinderwarden_trait` doing its own bookkeeping), but the warning was noisy and the dep was hidden.
+
+**Fix:** the library is now embedded directly inside Cinderwatch. No second zip to install, no missing-dep warning. A guard pattern (`if (!("StackLib" in ::getroottable())) { ... }`) means if a sibling mod (Golden Throne v3.0.5+, future scenarios) also embeds the lib, only the first one to load defines the slot — no namespace collisions.
+
+End-user impact: install `zmod_cinderwatch_2-6-2.zip`, the warning goes away, and Watch Points use the full StackLib coordination layer instead of the legacy fallback.
+
+### Files
+
+- `scripts/!mods_preload/mod_cinderwatch.nut` (embed block + 2.6.2 version)
+- `scripts/lib/stack_skills/stack_lib.nut` (NEW — embedded lib helper)
+- `scripts/lib/stack_skills/combat_hooks.nut` (NEW — embedded lib helper)
+
+---
+
 ## 2.6.1 — 2026-05-07
 
 **Patch — phantom-path log spam fix.**
@@ -238,10 +262,6 @@ Initial release. Full scenario:
 - **Inheritor of Flame** — Tier IV capstone handoff.
 - **Intro event** — 4 screens (letter / tower / promise / brief).
 
-Self-authored by Claude during an autonomous overnight build 2026-04-22.
-
 ---
 
 Full git log for this mod: `git log --all -- 'zmod_cinderwatch_*'`.
-Current-version spec + mechanics: `./CLAUDE.md`.
-Parked v2.1 roadmap (scripted combat): Claude memory `project_cinderwatch_v2_roadmap.md`.
