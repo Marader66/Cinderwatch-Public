@@ -12,7 +12,7 @@
 
 ::Cinderwatch <- {
 	ID      = "mod_cinderwatch",
-	Version = "2.6.0",
+	Version = "2.6.1",
 	Name    = "The Cinderwatch"
 };
 

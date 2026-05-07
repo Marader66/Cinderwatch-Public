@@ -24,7 +24,12 @@ this.lantern_strike_skill <- this.inherit("scripts/skills/skill", {
 		this.m.Name            = "Lantern Strike";
 		this.m.Description     = "Hurl a bound flare at the target. The cast is short and hot — and the light spreads. Anything hiding near where it lands stops hiding.";
 		this.m.Icon = "ui/perks/lightning_circle.png";  // vanilla fallback
-		this.m.IconDisabled    = "ui/perks/perk_70.png";
+		// v2.6.1 — IconDisabled removed. Was "ui/perks/perk_70.png" which
+		// doesn't ship in vanilla / Legends / ROTU; engine logged "Unable
+		// to open file" every time the skill rendered in disabled state
+		// (cooldown / missing AP / etc). With no IconDisabled set, BB
+		// uses the main Icon with a default disabled-tint — works for
+		// every other skill in vanilla, works for us.
 		this.m.Overlay         = "active_129";
 		// 2.1.2 — was sounds/combat/throw_01.wav, suspect phantom (no other
 		// mod references it; same risk class as rekindle's scroll_open_01).

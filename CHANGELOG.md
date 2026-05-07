@@ -9,6 +9,18 @@ Newest first.
 
 ---
 
+## 2.6.1 — 2026-05-07
+
+**Patch — phantom-path log spam fix.**
+
+Lantern Strike's `IconDisabled` was set to `gfx/ui/perks/perk_70.png`, which doesn't ship in vanilla / Legends / ROTU. Every time the skill rendered in disabled state (cooldown / out of AP / etc), the engine logged "Unable to open file." Cosmetic only — no gameplay impact — but spammy.
+
+**Fix:** removed the `IconDisabled` line entirely. BB falls back to a default disabled-tint of the main Icon (the lightning-circle), which is what every vanilla skill does anyway.
+
+Save-compat with v2.6.0 — direct in-place upgrade.
+
+---
+
 ## 2.6.0 — 2026-05-07 — **First public release**
 
 The 2.x line is feature-complete. This is the first public ship.
