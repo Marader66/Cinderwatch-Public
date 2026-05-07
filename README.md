@@ -9,7 +9,7 @@ A deliberate counterpoint to god-king scenarios. The story is gothic-duty rather
 Grab the latest zip from the [Releases page](https://github.com/Marader66/Cinderwatch-Public/releases) and drop it into your Battle Brothers `data/` folder. No extraction needed.
 
 ```
-zmod_cinderwatch_<version>_INN.zip
+zmod_cinderwatch_<version>.zip
 ```
 
 ## Required mods

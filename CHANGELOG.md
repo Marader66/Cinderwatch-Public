@@ -1,7 +1,7 @@
 # The Cinderwatch — Changelog
 
 Mod ID: `mod_cinderwatch`
-Deliverable: `zmod_cinderwatch_<version>_INN.zip`
+Deliverable: `zmod_cinderwatch_<version>.zip`
 
 Versions follow semver: **MAJOR.MINOR.PATCH**. Patch = tweaks/fixes, minor = new feature, major = structural overhaul. Source folder name lags the current version by design — it's a working-copy label, not a version number.
 
